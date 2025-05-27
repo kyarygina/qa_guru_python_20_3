@@ -1,11 +1,10 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 
 
-def test_successful_search(driver):
-    driver = webdriver.Chrome()
+def test_successful_search(driver_settings):
+    driver = driver_settings
     driver.get('https://www.startpage.com/')
 
     search_input = driver.find_element(By.ID, 'q')
@@ -17,8 +16,8 @@ def test_successful_search(driver):
     assert 'Web results' in driver.page_source
     driver.quit()
 
-def test_unsuccessful_search(driver):
-        driver = webdriver.Chrome()
+def test_unsuccessful_search(driver_settings):
+        driver = driver_settings
         driver.get('https://www.startpage.com/')
 
         search_input = driver.find_element(By.ID, 'q')

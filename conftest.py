@@ -13,12 +13,11 @@ def browser_settings():
 
 #selenium
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 
 
 @pytest.fixture(scope="session")
-def driver():
-    driver = webdriver.Chrome(service=Service())
+def driver_settings():
+    driver = webdriver.Chrome()
     driver.set_window_size(1920, 1080)
-    yield
+    yield driver
     driver.quit()
