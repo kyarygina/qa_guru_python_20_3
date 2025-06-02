@@ -1,6 +1,6 @@
 import pytest
 
-#selenide
+#selene
 from selene import browser
 
 
